@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlocNotasCurso.View.Login">
+  <StackLayout Orientation="Vertical">
+    <Label Text="{Binding TituloLogin}"></Label>
+    <Entry Text="{Binding Usuario.Login}"></Entry>
+    <Label Text="{Binding TituloPassword}"></Label>
+    <Entry Text="{Binding Usuario.Password}"></Entry>
+    <StackLayout Orientation="Horizontal">
+      <Button Text="{Binding TituloIniciar}" Command="{Binding cmdLogin}"></Button>
+      <Button Text="{Binding TituloRegistro}" Command="{Binding cmdAlta}"></Button>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
