@@ -2,12 +2,13 @@
 using BlocNotasCurso.Factorias;
 using BlocNotasCurso.Model;
 using BlocNotasCurso.Service;
+using Xamarin.Forms;
 
 namespace BlocNotasCurso.ViewModel
 {
     public class RegistroViewModel:GeneralViewModel
     {
-        public ICommand CmdAlta { get; set; }
+        public ICommand CmdRegistro { get; set; }
 
         public Usuario Usuario
         {
@@ -15,14 +16,16 @@ namespace BlocNotasCurso.ViewModel
             set { SetProperty(ref _usuario,value); }
         }
    
-        private Usuario _usuario;
+        private Usuario _usuario = new Usuario();
 
         public RegistroViewModel(INavigator navigator, IServicioDatos servicio) : base(navigator, servicio)
         {
+            CmdRegistro = new Command(GuardarUsuario);
         }
 
         private async void GuardarUsuario()
         {
+            _usuario.Foto = "";
             try
             {
                 IsBusy = true;
